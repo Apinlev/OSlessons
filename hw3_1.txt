@@ -1,4 +1,0 @@
-#!/bin/bash
-history > text.txt
-sed -i 's/ls/list directory/' text.txt
-cat text.txt
