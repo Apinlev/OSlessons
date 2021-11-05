@@ -1,0 +1,22 @@
+#!/bin/bash
+echo -e "pater
+noster
+que
+es
+in
+caelis
+sanctificetur
+nomen
+tuum
+adveniat
+regnum
+tuum" > f1
+echo -e  "ave
+maria
+gratia
+plena
+dominus
+tecum" > f2
+head -n 10 f1 > f3
+tail -n 5 f2 >> f3
+cat f3
