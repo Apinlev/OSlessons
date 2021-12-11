@@ -36,14 +36,22 @@ void find(char* dirname, char* substr)
       char line[512] = "";
       f=fopen(path,"r");
      while((c=fgetc(f))!=EOF){
+       if( strncmp(&c,"\n", 1) != 0)
+       {
         strncat(line, &c, 1);
+       }
+       else
+       {
+         if(strstr(line, substr))
+         {
+           printf("%s \n", entry->d_name);
+           printf("%s \n", line);
+         }
+         strcpy(line, "");
+       }
       }
     fclose(f);
-    if(strstr(line, substr))
-    {
-      printf("%s \n", entry->d_name);
-      printf("%s \n", line);
-    }
+    
     }
     entry = readdir(dirptr);
   }
